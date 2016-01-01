@@ -1,13 +1,13 @@
 var express = require('express');
 var path = require('path');
 var app = new express();
-const appPath = path.resolve(__dirname, '../app');
+const appPath = path.resolve(__dirname, '../.tmp');
 console.log(appPath)
 
 app.get('/', function(req, res){
 	res.render('./../app/views/index.ejs',{})
 })
 
-.use('/app', express.static(appPath))
+.use(express.static(appPath))
 
 .listen(7777)
