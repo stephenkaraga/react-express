@@ -4,10 +4,10 @@ var listeners = {};
 module.exports = {
 	register:function(cb) {
 		var id = guid.raw();
-		listeners[id] = callback;
+		listeners[id] = cb;
 		return id
 	},
-	dispactch: function(payload) {
+	dispatch: function(payload) {
 		console.info("Dispatching...",payload);
 		for(var id in listeners){
 			var listener = listeners[id];
