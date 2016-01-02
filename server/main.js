@@ -3,7 +3,8 @@ var path = require('path');
 var parser = require('body-parser');
 var app = new express();
 const appPath = path.resolve(__dirname, '../.tmp');
-console.log(appPath)
+
+require('./database.js');
 
 app.get('/', function(req, res){
 	res.render('./../app/views/index.ejs',{})
